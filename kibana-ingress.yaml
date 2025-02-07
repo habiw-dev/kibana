@@ -4,11 +4,12 @@ metadata:
   name: kibana
   namespace: elastic-system
   annotations:
-    kubernetes.io/ingress.class: "nginx"
+    #kubernetes.io/ingress.class: "nginx"
+    spec.ingressClassName: "nginx"
     nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
-    - host: 172.29.5.66  # Kendi domain’ini gir
+    - host: k8s-cp-01  # Kendi domain’ini gir
       http:
         paths:
           - path: /
